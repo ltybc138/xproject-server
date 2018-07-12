@@ -1,20 +1,36 @@
 package com.ltybc.xproject.server.model;
 
-public class Profile {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+//    @NotNull
+//    @Size(min = 5, max = 12)
     private String login;
+
+//    @NotNull
+//    @Email
     private String email;
+
+//    @NotNull
     private String password;
 
-    public Profile() {
+    public User() {
     }
 
-    public Profile(String login, String password) {
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
-    public Profile(Long id, String login, String email, String password) {
+    public User(Long id, String login, String email, String password) {
         this.id = id;
         this.login = login;
         this.email = email;
