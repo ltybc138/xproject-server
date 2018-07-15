@@ -1,48 +1,42 @@
 package com.ltybc.xproject.server.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-//    @NotNull
-//    @Size(min = 5, max = 12)
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "login")
     private String login;
 
-//    @NotNull
-//    @Email
+    @Column(name = "email")
     private String email;
 
-//    @NotNull
+    @Column(name = "password")
     private String password;
 
     public User() {
     }
 
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-
-    public User(Long id, String login, String email, String password) {
-        this.id = id;
-        this.login = login;
-        this.email = email;
-        this.password = password;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {

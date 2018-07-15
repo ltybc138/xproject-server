@@ -1,5 +1,0 @@
-insert into user values (10001, 'admin@gmail.com', 'admin', 'password')
-insert into user values (10002, 'ltybc@gmail.com', 'ltybc', 'password')
-insert into user values (10003, 'denis@gmail.com', 'denis', 'password')
-insert into user values (10004, 'misha@gmail.com', 'misha', 'password')
-insert into user values (10005, 'coder@gmail.com', 'coder', 'password')
