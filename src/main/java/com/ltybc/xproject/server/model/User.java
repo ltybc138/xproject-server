@@ -17,14 +17,17 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "role")
+    private Role role;
+
     public User() {
     }
 
-    public User(Long id, String login, String email, String password) {
-        this.id = id;
+    public User(String login, String email, String password, Role role) {
         this.login = login;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
@@ -57,5 +60,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
