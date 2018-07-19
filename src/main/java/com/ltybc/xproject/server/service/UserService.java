@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface UsersService {
+public interface UserService {
     List<User> findAll();
     User findByLogin(String login);
     void save(User user);

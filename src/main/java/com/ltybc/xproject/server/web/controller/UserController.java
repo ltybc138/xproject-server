@@ -1,7 +1,7 @@
 package com.ltybc.xproject.server.web.controller;
 
 import com.ltybc.xproject.server.model.User;
-import com.ltybc.xproject.server.service.UsersService;
+import com.ltybc.xproject.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,32 +10,33 @@ import java.util.List;
 
 @RestController
 @Transactional
-public class UsersController {
+@RequestMapping("/users")
+public class UserController {
     @Autowired
-    private UsersService usersService;
+    private UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping("")
     public List<User> getAllUsers() {
-        return usersService.findAll();
+        return userService.findAll();
     }
 
-    @GetMapping("/users/{login}")
+    @GetMapping("{login}")
     public User getUserByLogin(@PathVariable String login) {
-        return usersService.findByLogin(login);
+        return userService.findByLogin(login);
     }
 
-    @PostMapping("/users")
+    @PostMapping("")
     public void createNewUser(@RequestBody User user) {
-        usersService.save(user);
+        userService.save(user);
     }
 
-    @PutMapping("/users")
+    @PutMapping("")
     public void updateUser(@RequestBody User user) {
-        usersService.updateUser(user);
+        userService.updateUser(user);
     }
 
-    @DeleteMapping("/users/{login}")
+    @DeleteMapping("{login}")
     public void deleteUserByLogin(@PathVariable String login) {
-        usersService.deleteByLogin(login);
+        userService.deleteByLogin(login);
     }
 }
