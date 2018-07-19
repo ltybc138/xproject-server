@@ -10,5 +10,6 @@ public interface UsersService {
     List<User> findAll();
     User findByLogin(String login);
     void save(User user);
+    void updateUser(User user);
     void deleteByLogin(String login);
 }

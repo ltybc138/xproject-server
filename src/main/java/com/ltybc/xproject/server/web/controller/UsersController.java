@@ -27,6 +27,11 @@ public class UsersController {
         usersService.save(user);
     }
 
+    @PutMapping("/users")
+    public void updateUser(@RequestBody User user) {
+        usersService.updateUser(user);
+    }
+
     @DeleteMapping("/users/{login}")
     public void deleteUserByLogin(@PathVariable String login) {
         usersService.deleteByLogin(login);
