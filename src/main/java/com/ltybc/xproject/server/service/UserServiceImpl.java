@@ -41,6 +41,6 @@ public class UserServiceImpl implements UserService {
     public void deleteByLogin(String login) {
         Cart cart = userDao.findByLogin(login).getCart();
         userDao.deleteByLogin(login);
-        cartDao.deleteById(cart.getId()); //TODO add not found exception for feature requests on deleted cart
+        cartDao.deleteById(cart.getId());
     }
 }

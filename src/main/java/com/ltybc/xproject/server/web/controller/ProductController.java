@@ -23,11 +23,13 @@ public class ProductController {
 
     @GetMapping("{id}")
     public Product getById(@PathVariable Long id) {
+        // TODO throw an exception if product id can't be found
         return productService.getById(id);
     }
 
     @PostMapping("")
     public void createProduct(@RequestBody Product product) {
+        // TODO throw an exception if product object is incorrect(validate fields)
         productService.addProduct(product);
     }
 
@@ -39,6 +41,7 @@ public class ProductController {
 
     @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable Long id) {
+        // TODO throw an exception if id does not exist
         productService.deleteProductById(id);
     }
 }

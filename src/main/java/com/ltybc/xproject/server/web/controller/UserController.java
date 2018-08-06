@@ -33,6 +33,7 @@ public class UserController {
 
     @PostMapping("")
     public void createNewUser(@RequestBody User user) {
+        // TODO replace this shit with validation
         if (user.getLogin() == null || user.getPassword() == null || user.getEmail() == null) {
             throw new InvalidUserDataException("Input data is invalid");
         }
@@ -41,11 +42,13 @@ public class UserController {
 
     @PutMapping("")
     public void updateUser(@RequestBody User user) {
+        // TODO throw an exception if user dies not exist
         userService.updateUser(user);
     }
 
     @DeleteMapping("{login}")
     public void deleteUserByLogin(@PathVariable String login) {
+        // TODO throw an exception if user dies not exist
         userService.deleteByLogin(login);
     }
 }
