@@ -18,13 +18,17 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    public Product getById(Long id) {
+        return productDao.getById(id);
+    }
+
+    @Override
     public void addProduct(Product product) {
         productDao.save(product);
     }
 
     @Override
     public void updateProduct(Product product) {
-        // TODO check if product already exist
         productDao.save(product);
     }
 
