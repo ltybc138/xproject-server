@@ -1,5 +1,8 @@
 package com.ltybc.xproject.server.model;
 
+import com.ltybc.xproject.server.dao.CartDao;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +22,10 @@ public class User {
 
     @Column(name = "role")
     private Role role;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "cartId")
+    private Cart cart = new Cart();
 
     public User() {
     }
@@ -68,5 +75,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
