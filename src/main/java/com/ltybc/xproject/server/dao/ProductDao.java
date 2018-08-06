@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProductDao extends CrudRepository<Product, Long> {
     void deleteProductById(Long id);
+    Product getById(Long id);
 }

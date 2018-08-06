@@ -21,6 +21,11 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping("{id}")
+    public Product getById(@PathVariable Long id) {
+        return productService.getById(id);
+    }
+
     @PostMapping("")
     public void createProduct(@RequestBody Product product) {
         productService.addProduct(product);
@@ -28,6 +33,7 @@ public class ProductController {
 
     @PutMapping("")
     public void updateProduct(@RequestBody Product product) {
+        // TODO check if product already exist
         productService.updateProduct(product);
     }
 
