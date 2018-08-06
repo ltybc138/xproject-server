@@ -2,6 +2,7 @@ package com.ltybc.xproject.server.web.controller;
 
 import com.ltybc.xproject.server.model.Product;
 import com.ltybc.xproject.server.service.ProductService;
+import com.ltybc.xproject.server.service.ex.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,9 @@ public class ProductController {
 
     @GetMapping("{id}")
     public Product getById(@PathVariable Long id) {
-        // TODO throw an exception if product id can't be found
+        if (productService.getById(id) == null) {
+            throw new ProductNotFoundException("Product with id:" + id + " not found");
+        }
         return productService.getById(id);
     }
 
@@ -35,13 +38,18 @@ public class ProductController {
 
     @PutMapping("")
     public void updateProduct(@RequestBody Product product) {
-        // TODO check if product already exist
+        long id = product.getId();
+        if (productService.getById(id) == null) {
+            throw new ProductNotFoundException("Product with id:" + id + " not found");
+        }
         productService.updateProduct(product);
     }
 
     @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable Long id) {
-        // TODO throw an exception if id does not exist
+        if (productService.getById(id) == null) {
+            throw new ProductNotFoundException("Product with id:" + id + " not found");
+        }
         productService.deleteProductById(id);
     }
 }

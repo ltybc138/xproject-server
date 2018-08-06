@@ -26,7 +26,7 @@ public class UserController {
     public User getUserByLogin(@PathVariable String login) {
         User user = userService.findByLogin(login);
         if (user == null) {
-            throw new UserNotFoundException("User with login=\'" + login + "\' not found");
+            throw new UserNotFoundException("User with login:\'" + login + "\' not found");
         }
         return user;
     }
@@ -42,13 +42,18 @@ public class UserController {
 
     @PutMapping("")
     public void updateUser(@RequestBody User user) {
-        // TODO throw an exception if user dies not exist
+        String login = user.getLogin();
+        if (userService.findByLogin(login) == null) {
+            throw new UserNotFoundException("User with login:\'" + login + "\' not found");
+        }
         userService.updateUser(user);
     }
 
     @DeleteMapping("{login}")
     public void deleteUserByLogin(@PathVariable String login) {
-        // TODO throw an exception if user dies not exist
+        if (userService.findByLogin(login) == null) {
+            throw new UserNotFoundException("User with login:\'" + login + "\' not found");
+        }
         userService.deleteByLogin(login);
     }
 }
