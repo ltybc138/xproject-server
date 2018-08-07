@@ -1,6 +1,7 @@
 package com.ltybc.xproject.server.model;
 
 import com.ltybc.xproject.server.dao.CartDao;
+import com.ltybc.xproject.server.model.validation.PhoneNumber;
 import javafx.beans.DefaultProperty;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -29,6 +30,10 @@ public class User {
     @Column(name = "password")
     @NotEmpty
     private String password;
+
+    @Column(name = "phone")
+    @PhoneNumber
+    private String phone;
 
     @Column(name = "role")
     @NotNull
@@ -94,5 +99,13 @@ public class User {
 
     public void setCart(Cart cart) {
         this.cart = cart;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
