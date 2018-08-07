@@ -29,6 +29,7 @@ public class User {
 
     @Column(name = "password")
     @NotEmpty
+    @Size(min = 8, max = 24)
     private String password;
 
     @Column(name = "phone")
