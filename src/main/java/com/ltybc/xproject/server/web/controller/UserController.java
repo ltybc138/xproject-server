@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("")
-    public void createNewUser(@RequestBody User user) {
+    public void createNewUser(@RequestBody @Valid User user) {
         // TODO replace this shit with validation
         if (user.getLogin() == null || user.getPassword() == null || user.getEmail() == null) {
             throw new InvalidUserDataException("Input data is invalid");
@@ -41,7 +42,7 @@ public class UserController {
     }
 
     @PutMapping("")
-    public void updateUser(@RequestBody User user) {
+    public void updateUser(@RequestBody @Valid User user) {
         String login = user.getLogin();
         if (userService.findByLogin(login) == null) {
             throw new UserNotFoundException("User with login:\'" + login + "\' not found");

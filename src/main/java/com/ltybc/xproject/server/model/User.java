@@ -1,9 +1,14 @@
 package com.ltybc.xproject.server.model;
 
 import com.ltybc.xproject.server.dao.CartDao;
+import javafx.beans.DefaultProperty;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -12,15 +17,21 @@ public class User {
     private Long id;
 
     @Column(name = "login")
+    @NotEmpty
+    @Size(min = 5, max = 12)
     private String login;
 
     @Column(name = "email")
+    @NotEmpty
+    @Email
     private String email;
 
     @Column(name = "password")
+    @NotEmpty
     private String password;
 
     @Column(name = "role")
+    @NotNull
     private Role role;
 
     @OneToOne(cascade = CascadeType.PERSIST)

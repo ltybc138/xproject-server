@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,13 +32,13 @@ public class ProductController {
     }
 
     @PostMapping("")
-    public void createProduct(@RequestBody Product product) {
+    public void createProduct(@RequestBody @Valid Product product) {
         // TODO throw an exception if product object is incorrect(validate fields)
         productService.addProduct(product);
     }
 
     @PutMapping("")
-    public void updateProduct(@RequestBody Product product) {
+    public void updateProduct(@RequestBody @Valid Product product) {
         long id = product.getId();
         if (productService.getById(id) == null) {
             throw new ProductNotFoundException("Product with id:" + id + " not found");
