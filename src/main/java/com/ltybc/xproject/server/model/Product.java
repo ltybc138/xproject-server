@@ -1,6 +1,10 @@
 package com.ltybc.xproject.server.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Product {
@@ -9,10 +13,13 @@ public class Product {
     private Long id;
 
     @Column(name = "name")
+    @Size(min = 2, max = 30)
+    @NotEmpty
     private String name;
 
     @Column(name = "price")
-    private double price;
+    @NotNull
+    private Double price;
 
     @Column(name = "imageSrc")
     private String imageSrc;
