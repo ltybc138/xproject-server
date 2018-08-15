@@ -29,11 +29,13 @@ public class DataLoader implements ApplicationRunner {
         User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN_ROLE);
         User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER_ROLE);
         User user4 = new User("denis", "denis@gmail.com", "password", Role.USER_ROLE);
+        User user5 = new User("notch", "notch@gmail.com", "password", Role.USER_ROLE);
 
         userDao.save(user1);
         userDao.save(user2);
         userDao.save(user3);
         userDao.save(user4);
+        userDao.save(user5);
     }
 
     private void setUpProducts() {
