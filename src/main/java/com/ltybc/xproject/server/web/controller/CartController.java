@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/carts")
+@CrossOrigin(origins = "*")
 public class CartController {
     @Autowired
     private CartService cartService;
 
     @Autowired
     private ProductService productService;
-
 
     @GetMapping("{id}")
     public Cart getCartById(@PathVariable Long id) {
