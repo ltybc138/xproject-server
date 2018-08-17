@@ -8,7 +8,10 @@ import com.ltybc.xproject.server.service.ex.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 @RestController
+@Transactional
 @RequestMapping("/carts")
 @CrossOrigin(origins = "*")
 public class CartController {
