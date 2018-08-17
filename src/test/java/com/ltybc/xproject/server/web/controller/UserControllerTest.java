@@ -56,7 +56,7 @@ public class UserControllerTest {
         User user = new User();
         user.setPassword("password");
         user.setEmail("someperson@gmail.com");
-        user.setRole(Role.USER_ROLE);
+        user.setRole(Role.USER);
 
         Gson gson = new Gson();
         String json = gson.toJson(user);
@@ -78,7 +78,7 @@ public class UserControllerTest {
         User user = new User();
         user.setLogin("abracadabra");
         user.setEmail("someperson@gmail.com");
-        user.setRole(Role.USER_ROLE);
+        user.setRole(Role.USER);
 
         Gson gson = new Gson();
         String json = gson.toJson(user);
@@ -100,7 +100,7 @@ public class UserControllerTest {
         User user = new User();
         user.setLogin("abracadabra");
         user.setPassword("password");
-        user.setRole(Role.USER_ROLE);
+        user.setRole(Role.USER);
 
         Gson gson = new Gson();
         String json = gson.toJson(user);
@@ -123,7 +123,7 @@ public class UserControllerTest {
         user.setLogin("abracadabra");
         user.setPassword("password");
         user.setEmail("somepearson@gmail.com");
-        user.setRole(Role.USER_ROLE);
+        user.setRole(Role.USER);
 
         Gson gson = new Gson();
         String json = gson.toJson(user);
@@ -147,7 +147,7 @@ public class UserControllerTest {
         user.setLogin("abcdefg");
         user.setEmail("abs@gmail.com");
         user.setPassword("password");
-        user.setRole(Role.USER_ROLE);
+        user.setRole(Role.USER);
 
         Gson gson = new Gson();
         String json = gson.toJson(user);

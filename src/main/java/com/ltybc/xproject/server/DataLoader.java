@@ -1,7 +1,9 @@
 package com.ltybc.xproject.server;
 
+import com.ltybc.xproject.server.dao.CategoryDao;
 import com.ltybc.xproject.server.dao.ProductDao;
 import com.ltybc.xproject.server.dao.UserDao;
+import com.ltybc.xproject.server.model.Category;
 import com.ltybc.xproject.server.model.Product;
 import com.ltybc.xproject.server.model.Role;
 import com.ltybc.xproject.server.model.User;
@@ -13,6 +15,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
     @Autowired
+    private CategoryDao categoryDao;
+
+    @Autowired
     private UserDao userDao;
 
     @Autowired
@@ -20,16 +25,34 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
+        setUpCategories();
         setUpUsers();
         setUpProducts();
     }
 
+    private void setUpCategories() {
+        Category category1 = new Category("TV");
+        Category category2 = new Category("Computers");
+        Category category3 = new Category("Food");
+        Category category4 = new Category("Drinks");
+        Category category5 = new Category("Books");
+        Category category6 = new Category("Shows");
+
+        categoryDao.save(category1);
+        categoryDao.save(category2);
+        categoryDao.save(category3);
+        categoryDao.save(category4);
+        categoryDao.save(category5);
+        categoryDao.save(category6);
+    }
+
     private void setUpUsers() {
-        User user1 = new User("user1", "user@gmail.com", "password", Role.USER_ROLE);
-        User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN_ROLE);
-        User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER_ROLE);
-        User user4 = new User("denis", "denis@gmail.com", "password", Role.USER_ROLE);
-        User user5 = new User("notch", "notch@gmail.com", "password", Role.USER_ROLE);
+
+        User user1 = new User("user1", "user@gmail.com", "password", Role.USER);
+        User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN);
+        User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER);
+        User user4 = new User("denis", "denis@gmail.com", "password", Role.USER);
+        User user5 = new User("notch", "notch@gmail.com", "password", Role.USER);
 
         userDao.save(user1);
         userDao.save(user2);
