@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @Transactional
 @RequestMapping("/products")
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired
@@ -33,7 +34,6 @@ public class ProductController {
 
     @PostMapping("")
     public void createProduct(@RequestBody @Valid Product product) {
-        // TODO throw an exception if product object is incorrect(validate fields)
         productService.addProduct(product);
     }
 

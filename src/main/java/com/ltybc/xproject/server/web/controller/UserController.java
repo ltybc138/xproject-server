@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @Transactional
 @RequestMapping("/users")
+@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -34,10 +35,6 @@ public class UserController {
 
     @PostMapping("")
     public void createNewUser(@RequestBody @Valid User user) {
-        // TODO replace this shit with validation
-        if (user.getLogin() == null || user.getPassword() == null || user.getEmail() == null) {
-            throw new InvalidUserDataException("Input data is invalid");
-        }
         userService.save(user);
     }
 

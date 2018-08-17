@@ -47,6 +47,7 @@ public class DataLoader implements ApplicationRunner {
     }
 
     private void setUpUsers() {
+
         User user1 = new User("user1", "user@gmail.com", "password", Role.USER);
         User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN);
         User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER);
