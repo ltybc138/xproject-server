@@ -23,6 +23,11 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public Category getCategoryByTag(String tag) {
+        return categoryDao.getByTag(tag);
+    }
+
+    @Override
     public void addCategory(Category category) {
         categoryDao.save(category);
     }
