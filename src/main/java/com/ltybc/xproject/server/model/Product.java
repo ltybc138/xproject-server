@@ -12,10 +12,12 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "title")
     @Size(min = 2, max = 30)
     @NotEmpty
-    private String name;
+    private String title;
+
+    //TODO add field description
 
     @Column(name = "price")
     @NotNull
@@ -24,12 +26,18 @@ public class Product {
     @Column(name = "imageSrc")
     private String imageSrc;
 
+    @ManyToOne(fetch = FetchType.EAGER
+            , cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "categoryId")
+    private Category category;
+
     public Product() {
     }
 
-    public Product(String name, double price, String imageSrc) {
-        this.name = name;
+    public Product(String title, double price, Category category, String imageSrc) {
+        this.title = title;
         this.price = price;
+        this.category = category;
         this.imageSrc = imageSrc;
     }
 
@@ -41,19 +49,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public double getPrice() {
+    @NotNull
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(@NotNull Double price) {
         this.price = price;
     }
 
@@ -63,5 +72,13 @@ public class Product {
 
     public void setImageSrc(String imageSrc) {
         this.imageSrc = imageSrc;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

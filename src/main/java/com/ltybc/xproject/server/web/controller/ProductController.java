@@ -1,6 +1,8 @@
 package com.ltybc.xproject.server.web.controller;
 
+import com.ltybc.xproject.server.model.Category;
 import com.ltybc.xproject.server.model.Product;
+import com.ltybc.xproject.server.service.CategoryService;
 import com.ltybc.xproject.server.service.ProductService;
 import com.ltybc.xproject.server.service.ex.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @GetMapping("")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
@@ -30,6 +35,13 @@ public class ProductController {
             throw new ProductNotFoundException("Product with id:" + id + " not found");
         }
         return productService.getById(id);
+    }
+
+    @GetMapping(path = "", params = "categoryId")
+    public List<Product> getProductsByCategoryId(@RequestParam("categoryId") Long categoryId) {
+        // TODO check if category id exists
+        Category category = categoryService.getCategoryById(categoryId);
+        return productService.getProductsByCategory(category);
     }
 
     @PostMapping("")

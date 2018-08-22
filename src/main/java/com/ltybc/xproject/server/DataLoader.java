@@ -12,6 +12,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class DataLoader implements ApplicationRunner {
     @Autowired
@@ -25,9 +27,23 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
-        setUpCategories();
         setUpUsers();
+        setUpCategories();
         setUpProducts();
+    }
+
+    private void setUpUsers() {
+        User user1 = new User("user1", "user@gmail.com", "password", Role.USER);
+        User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN);
+        User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER);
+        User user4 = new User("denis", "denis@gmail.com", "password", Role.USER);
+        User user5 = new User("notch", "notch@gmail.com", "password", Role.USER);
+
+        userDao.save(user1);
+        userDao.save(user2);
+        userDao.save(user3);
+        userDao.save(user4);
+        userDao.save(user5);
     }
 
     private void setUpCategories() {
@@ -46,24 +62,10 @@ public class DataLoader implements ApplicationRunner {
         categoryDao.save(category6);
     }
 
-    private void setUpUsers() {
-
-        User user1 = new User("user1", "user@gmail.com", "password", Role.USER);
-        User user2 = new User("admin", "admin@gmail.com", "password", Role.ADMIN);
-        User user3 = new User("ltybc", "ltybc@gmail.com", "password", Role.USER);
-        User user4 = new User("denis", "denis@gmail.com", "password", Role.USER);
-        User user5 = new User("notch", "notch@gmail.com", "password", Role.USER);
-
-        userDao.save(user1);
-        userDao.save(user2);
-        userDao.save(user3);
-        userDao.save(user4);
-        userDao.save(user5);
-    }
-
     private void setUpProducts() {
-        Product product1 = new Product("Apple MacBook Pro 13\'", 1299.0, "https://www.re-store.ru/upload/resize_cache/iblock/7d6/1120_770_17f5c944b3b71591cc9304fac25365de2/7d67229c35ddcfd8df81984fd6985c1f.jpg");
-        Product product2 = new Product("Starbucks coffee", 29.95, "https://fiu-assets-2-syitaetz61hl2sa.stackpathdns.com/static/use-media-items/47/46137/full-800x900/5847f74f/pike_place_wb_fy14_us_GR.jpeg?resolution=0");
+        List<Category> categories = (List<Category>) categoryDao.findAll();
+        Product product1 = new Product("Apple MacBook Pro 13\'", 1299.0, categories.get(0), "https://www.re-store.ru/upload/resize_cache/iblock/7d6/1120_770_17f5c944b3b71591cc9304fac25365de2/7d67229c35ddcfd8df81984fd6985c1f.jpg");
+        Product product2 = new Product("Starbucks coffee", 29.95, categories.get(3), "https://fiu-assets-2-syitaetz61hl2sa.stackpathdns.com/static/use-media-items/47/46137/full-800x900/5847f74f/pike_place_wb_fy14_us_GR.jpeg?resolution=0");
 
         productDao.save(product1);
         productDao.save(product2);

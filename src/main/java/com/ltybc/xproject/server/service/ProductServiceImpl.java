@@ -1,6 +1,7 @@
 package com.ltybc.xproject.server.service;
 
 import com.ltybc.xproject.server.dao.ProductDao;
+import com.ltybc.xproject.server.model.Category;
 import com.ltybc.xproject.server.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Product getById(Long id) {
         return productDao.getById(id);
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(Category category) {
+        return productDao.getAllByCategory(category);
     }
 
     @Override

@@ -8,7 +8,7 @@
     <artifactId>xproject-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>XProject server</name>
+    <title>XProject server</title>
     <description>XProject server</description>
 
     <parent>
