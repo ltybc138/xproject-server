@@ -1,7 +1,6 @@
 package com.ltybc.xproject.server.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +13,6 @@ public class Cart {
     @Column(name = "products")
     @ElementCollection
     private List<Long> products = new ArrayList<>();
-
-//    @OneToOne
-//    private User user;
 
     public Cart() {
     }

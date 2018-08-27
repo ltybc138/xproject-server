@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 public interface ProductService {
     List<Product> getAllProducts();
+//    List<Product> getProducts(int page, int size);
     Product getById(Long id);
     List<Product> getProductsByCategory(Category category);
     void addProduct(Product product);

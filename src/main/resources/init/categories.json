@@ -1,0 +1,26 @@
+[
+  {
+    "category": "TV",
+    "tag": "tv"
+  },
+  {
+    "category": "Computers",
+    "tag": "computers"
+  },
+  {
+    "category": "Food",
+    "tag": "food"
+  },
+  {
+    "category": "Drinks",
+    "tag": "drinks"
+  },
+  {
+    "category": "Books",
+    "tag": "books"
+  },
+  {
+    "category": "Shows",
+    "tag": "shows"
+  }
+]

@@ -1,0 +1,153 @@
+[
+  {
+    "title": "Apple MacBook Pro 13'",
+    "price": "1299.0",
+    "category": {
+      "id": "2"
+    },
+    "imageSrc": "https://www.re-store.ru/upload/resize_cache/iblock/7d6/1120_770_17f5c944b3b71591cc9304fac25365de2/7d67229c35ddcfd8df81984fd6985c1f.jpg"
+  },
+  {
+    "title": "Apple MacBook Pro 15'",
+    "price": "1799.0",
+    "category": {
+      "id": "2"
+    },
+    "imageSrc": "https://store.storeimages.cdn-apple.com/4667/as-images.apple.com/is/image/AppleInc/aos/published/images/m/bp/mbp15touch/space/mbp15touch-space-select-201807_GEO_GB?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1531167673902"
+  },
+  {
+    "title": "Microsoft Surface Pro 4",
+    "price": "2099.0",
+    "category": {
+      "id": "2"
+    },
+    "imageSrc": "https://images-na.ssl-images-amazon.com/images/I/41Uko0%2BZ2vL._SX425_.jpg"
+  },
+  {
+    "title": "Microsoft Surface Book",
+    "price": "1499.0",
+    "category": {
+      "id": "2"
+    },
+    "imageSrc": "https://images-na.ssl-images-amazon.com/images/I/712RG-x0YaL._SX425_.jpg"
+  },
+  {
+    "title": "Alienware Gaming Laptop",
+    "price": "2999.0",
+    "category": {
+      "id": "2"
+    },
+    "imageSrc": "https://i.dell.com/sites/imagecontent/app-merchandizing/responsive/LearnSegment/alienware/assets/en/PublishingImages/alienware-laptops/2218_Cassini_MLK_Launch_Assets_Alienware_15_MLK_570x428.png"
+  },
+
+
+
+
+
+
+  {
+    "title": "Starbucks Americano",
+    "price": "5.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/bd5d1810c0d44ad6b2646e5314975adf.jpg"
+  },
+  {
+    "title": "Starbucks Latte",
+    "price": "6.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/582c9f3da101446cbcc311aeac32f2f2.jpg"
+  },
+  {
+    "title": "Starbucks Mocha",
+    "price": "7.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/191cb21a271743abbca5d13f053229f2.jpg"
+  },
+  {
+    "title": "Starbucks Cappuccino",
+    "price": "6.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/9b54de55533a4a74911c0798b6e753ce.jpg"
+  },
+  {
+    "title": "Starbucks Caramel Macchiato",
+    "price": "7.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/d961948d45114601bad6b6c9d5993afa.jpg"
+  },
+  {
+    "title": "Starbucks Cinnamon Dolce Latte",
+    "price": "7.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/05850495d5db4c47b72906f82d8b4ca5.jpg"
+  },
+  {
+    "title": "Starbucks Espresso",
+    "price": "4.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/1f27f23c7ce34126bc0082b1f003c58d.jpg"
+  },
+  {
+    "title": "Starbucks Flat White",
+    "price": "5.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/03e7c329f73d4d488e86d8a4c9414675.jpg"
+  },
+  {
+    "title": "Starbucks Latte Macchiato",
+    "price": "6.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/e353eebe5c7b47e09d8b554401fd6be2.jpg"
+  },
+  {
+    "title": "Starbucks Skinny Mocha",
+    "price": "6.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/5f55d29d18744def8cfae78382eb9c81.jpg"
+  },
+  {
+    "title": "Starbucks Vanilla Bean Coconutmilk Latte",
+    "price": "7.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/f2eba9f472294827bacc75ec9fb03fd1.jpg"
+  },
+  {
+    "title": "Starbucks Vanilla Latte",
+    "price": "5.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/0ff1b3b4e6534d4daa8cb149514f3bf9.jpg"
+  },
+  {
+    "title": "Starbucks White Chocolate Mocha",
+    "price": "6.95",
+    "category": {
+      "id": "4"
+    },
+    "imageSrc": "https://www.starbucks.com/assets/0873c92be1084a3ebdd7688271672089.jpg"
+  }
+
+]

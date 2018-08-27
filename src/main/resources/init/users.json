@@ -1,0 +1,44 @@
+[
+  {
+    "login": "denis",
+    "password": "password",
+    "email": "denis@gmail.com",
+    "role": "USER"
+  },
+  {
+    "login": "admin",
+    "password": "password",
+    "email": "admin@gmail.com",
+    "role": "ADMIN"
+  },
+  {
+    "login": "vasia",
+    "password": "password",
+    "email": "vasia@gmail.com",
+    "role": "USER"
+  },
+  {
+    "login": "nikita",
+    "password": "password",
+    "email": "nikita@gmail.com",
+    "role": "USER"
+  },
+  {
+    "login": "ltybc",
+    "password": "password",
+    "email": "ltybc@gmail.com",
+    "role": "USER"
+  },
+  {
+    "login": "coder",
+    "password": "password",
+    "email": "coder@gmail.com",
+    "role": "ADMIN"
+  },
+  {
+    "login": "human",
+    "password": "password",
+    "email": "human@gmail.com",
+    "role": "USER"
+  }
+]
