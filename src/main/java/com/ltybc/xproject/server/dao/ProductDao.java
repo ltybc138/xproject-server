@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ProductDao extends CrudRepository<Product, Long> {
     void deleteProductById(Long id);
+
     Product getById(Long id);
+
     List<Product> getAllByCategory(Category category);
 }

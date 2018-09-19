@@ -1,14 +1,10 @@
 package com.ltybc.xproject.server.model;
 
-import com.ltybc.xproject.server.dao.CategoryDao;
-import com.ltybc.xproject.server.service.CategoryService;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 public class Product {

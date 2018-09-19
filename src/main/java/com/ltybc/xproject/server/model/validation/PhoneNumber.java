@@ -1,7 +1,5 @@
 package com.ltybc.xproject.server.model.validation;
 
-import sun.reflect.generics.scope.ClassScope;
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;

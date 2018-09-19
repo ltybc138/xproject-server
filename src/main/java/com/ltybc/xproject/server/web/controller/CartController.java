@@ -15,11 +15,15 @@ import javax.transaction.Transactional;
 @RequestMapping("/carts")
 @CrossOrigin(origins = "*")
 public class CartController {
-    @Autowired
-    private CartService cartService;
+
+    private final CartService cartService;
+    private final ProductService productService;
 
     @Autowired
-    private ProductService productService;
+    public CartController(CartService cartService, ProductService productService) {
+        this.cartService = cartService;
+        this.productService = productService;
+    }
 
     @GetMapping("{id}")
     public Cart getCartById(@PathVariable Long id) {

@@ -14,7 +14,7 @@ public class Cart {
     @ElementCollection
     private List<Long> products = new ArrayList<>();
 
-    public Cart() {
+    Cart() {
     }
 
     public Cart(List<Long> products) {

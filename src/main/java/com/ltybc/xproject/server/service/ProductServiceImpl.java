@@ -13,8 +13,12 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+    private final ProductDao productDao;
+
     @Autowired
-    private ProductDao productDao;
+    public ProductServiceImpl(ProductDao productDao) {
+        this.productDao = productDao;
+    }
 
     @Override
     public List<Product> getAllProducts() {

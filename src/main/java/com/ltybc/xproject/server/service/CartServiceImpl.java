@@ -10,8 +10,12 @@ import java.util.List;
 
 @Service
 public class CartServiceImpl implements CartService {
+    private final CartDao cartDao;
+
     @Autowired
-    private CartDao cartDao;
+    public CartServiceImpl(CartDao cartDao) {
+        this.cartDao = cartDao;
+    }
 
     @Override
     public Cart getCartById(Long id) {
@@ -29,7 +33,6 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public boolean deleteProductFromCart(Long cartId, Long productId) {
-        boolean deleted = false;
         Cart cart = cartDao.getById(cartId);
         List<Long> products = cart.getProducts();
         List<Integer> toRemove = new ArrayList<>();
@@ -38,10 +41,13 @@ public class CartServiceImpl implements CartService {
                 toRemove.add(i);
             }
         }
+
+        boolean deleted = false;
         for (int i : toRemove) {
             products.remove(i);
             deleted = true;
         }
+        
         cart.setProducts(products);
         cartDao.save(cart);
         return deleted;

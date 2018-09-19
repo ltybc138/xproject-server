@@ -7,11 +7,11 @@ public class Utils {
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].toLowerCase();
         }
-        String ans = "";
+        StringBuilder ans = new StringBuilder();
         for (int i = 0; i < words.length - 1; i++) {
-            ans += words[i] + "-";
+            ans.append(words[i]).append("-");
         }
-        ans += words[words.length - 1];
-        return ans;
+        ans.append(words[words.length - 1]);
+        return ans.toString();
     }
 }

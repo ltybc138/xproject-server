@@ -2,7 +2,6 @@ package com.ltybc.xproject.server.web.controller;
 
 import com.ltybc.xproject.server.model.User;
 import com.ltybc.xproject.server.service.UserService;
-import com.ltybc.xproject.server.service.ex.InvalidUserDataException;
 import com.ltybc.xproject.server.service.ex.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +15,13 @@ import java.util.List;
 @RequestMapping("/users")
 @CrossOrigin(origins = "*")
 public class UserController {
+
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("")
     public List<User> getAllUsers() {

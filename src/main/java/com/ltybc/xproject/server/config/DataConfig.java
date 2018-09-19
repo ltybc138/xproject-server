@@ -18,8 +18,12 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = "com.ltybc.xproject.server.dao")
 @PropertySource("application.properties")
 public class DataConfig {
+    private final Environment environment;
+
     @Autowired
-    private Environment environment;
+    public DataConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

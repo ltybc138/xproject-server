@@ -12,10 +12,14 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private final UserDao userDao;
+    private final CartDao cartDao;
+
     @Autowired
-    private UserDao userDao;
-    @Autowired
-    private CartDao cartDao;
+    public UserServiceImpl(UserDao userDao, CartDao cartDao) {
+        this.userDao = userDao;
+        this.cartDao = cartDao;
+    }
 
     @Override
     public List<User> findAll() {

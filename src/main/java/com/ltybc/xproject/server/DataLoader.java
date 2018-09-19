@@ -14,22 +14,25 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class DataLoader implements ApplicationRunner {
-    @Autowired
-    private CategoryDao categoryDao;
+
+    private final CategoryDao categoryDao;
+    private final UserDao userDao;
+    private final ProductDao productDao;
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private ProductDao productDao;
+    public DataLoader(CategoryDao categoryDao, UserDao userDao, ProductDao productDao) {
+        this.categoryDao = categoryDao;
+        this.userDao = userDao;
+        this.productDao = productDao;
+    }
 
     @Override
-    public void run(ApplicationArguments applicationArguments) throws Exception {
+    public void run(ApplicationArguments applicationArguments) {
         setUpUsers();
         setUpCategories();
         setUpProducts();
@@ -40,7 +43,7 @@ public class DataLoader implements ApplicationRunner {
         ClassLoader classLoader = getClass().getClassLoader();
         List<User> users = null;
         try {
-            users = mapper.readValue(new File(classLoader.getResource("init/users.json").getFile()),
+            users = mapper.readValue(new File(Objects.requireNonNull(classLoader.getResource("init/users.json")).getFile()),
                     new TypeReference<List<User>>() {});
 
         } catch (IOException e) {
@@ -54,7 +57,7 @@ public class DataLoader implements ApplicationRunner {
         ClassLoader classLoader = getClass().getClassLoader();
         List<Category> categories = null;
         try {
-            categories = mapper.readValue(new File(classLoader.getResource("init/categories.json").getFile()),
+            categories = mapper.readValue(new File(Objects.requireNonNull(classLoader.getResource("init/categories.json")).getFile()),
                     new TypeReference<List<Category>>() {});
         } catch (IOException e) {
             e.printStackTrace();
@@ -68,7 +71,7 @@ public class DataLoader implements ApplicationRunner {
         ClassLoader classLoader = getClass().getClassLoader();
         List<Product> products = null;
         try {
-            products = mapper.readValue(new File(classLoader.getResource("init/products.json").getFile()),
+            products = mapper.readValue(new File(Objects.requireNonNull(classLoader.getResource("init/products.json")).getFile()),
                     new TypeReference<List<Product>>() {});
         } catch (IOException e) {
             e.printStackTrace();

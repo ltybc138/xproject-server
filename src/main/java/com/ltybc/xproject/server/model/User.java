@@ -1,11 +1,8 @@
 package com.ltybc.xproject.server.model;
 
-import com.ltybc.xproject.server.dao.CartDao;
 import com.ltybc.xproject.server.model.validation.PhoneNumber;
-import javafx.beans.DefaultProperty;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
