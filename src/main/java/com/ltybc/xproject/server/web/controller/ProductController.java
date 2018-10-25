@@ -8,7 +8,9 @@ import com.ltybc.xproject.server.service.ex.CategoryNotFoundException;
 import com.ltybc.xproject.server.service.ex.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.List;

@@ -5,14 +5,15 @@ import com.ltybc.xproject.server.model.Category;
 import com.ltybc.xproject.server.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Service;
 
+import javax.naming.ldap.PagedResultsControl;
 import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+
     private final ProductDao productDao;
 
     @Autowired

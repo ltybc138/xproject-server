@@ -2,6 +2,7 @@ package com.ltybc.xproject.server.service;
 
 import com.ltybc.xproject.server.model.Category;
 import com.ltybc.xproject.server.model.Product;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
